@@ -1,0 +1,94 @@
+{
+	"info": {
+		"_postman_id": "e7c241a6-adbc-4a09-b10b-a95d87104d15",
+		"name": "reward-sys",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20705988",
+		"_collection_link": "https://beaconfire-team.postman.co/workspace/beaconfire~29ccc720-2c92-4ffc-8dfa-95f7e0ad87a4/collection/20705988-e7c241a6-adbc-4a09-b10b-a95d87104d15?action=share&source=collection_link&creator=20705988"
+	},
+	"item": [
+		{
+			"name": "add transaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customerId\": \"fa710852-d7c5-465f-81c2-1473b6a3bd9e\",\n    \"amount\": 200,\n    \"transactionTime\": \"2024-04-23T00:00:00.000Z\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/transaction/api/v1/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transaction",
+						"api",
+						"v1",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "batch add transaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"transactions\": [\n        {\n            \"customerId\": \"fa710852-d7c5-465f-81c2-1473b6a3bd9e\",\n            \"amount\": 200,\n            \"transactionTime\": \"2024-04-23T00:00:00.000Z\"\n        },\n        {\n            \"customerId\": \"fa710852-d7c5-465f-81c2-1473b6a3bd9e\",\n            \"amount\": 300,\n            \"transactionTime\": \"2024-04-23T00:00:00.000Z\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/transaction/api/v1/batch/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transaction",
+						"api",
+						"v1",
+						"batch",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all point summaries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/reward/api/v1/pointSummary/getAll",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reward",
+						"api",
+						"v1",
+						"pointSummary",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
