@@ -2,7 +2,7 @@ package org.assessment.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.assessment.domain.PointSummaryDto;
+import org.assessment.domain.reward.PointSummaryDto;
 import org.assessment.entity.Transaction;
 import org.assessment.repository.TransactionRepository;
 import org.assessment.service.RewardService;

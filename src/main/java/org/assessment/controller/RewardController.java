@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.assessment.constant.StatusCode;
 import org.assessment.constant.StatusMsg;
-import org.assessment.domain.PointSummaryDto;
+import org.assessment.domain.reward.PointSummaryDto;
 import org.assessment.domain.response.GetAllPointSummaryResponse;
 import org.assessment.domain.response.ResponseDTO;
 import org.assessment.service.RewardService;

@@ -1,18 +1,14 @@
-package org.assessment.domain;
+package org.assessment.domain.customer;
 
 import lombok.*;
-
-import java.util.Map;
 
 @Builder
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class PointSummaryDto {
+public class CustomerDto {
     private String customerId;
     private String customerFirstName;
     private String customerLastName;
-    private Map<String, Integer> pointsPerMonth;
-    private int totalPoints;
 }

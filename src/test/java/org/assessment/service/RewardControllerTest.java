@@ -1,6 +1,6 @@
 package org.assessment.service;
 
-import org.assessment.domain.PointSummaryDto;
+import org.assessment.domain.reward.PointSummaryDto;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -14,7 +14,6 @@ import org.assessment.entity.Transaction;
 import org.assessment.repository.TransactionRepository;
 import org.assessment.service.impl.RewardServiceImpl;
 
-import java.time.LocalDate;
 import java.time.ZonedDateTime;
 import java.util.Arrays;
 import java.util.List;

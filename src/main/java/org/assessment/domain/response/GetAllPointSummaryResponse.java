@@ -1,7 +1,7 @@
 package org.assessment.domain.response;
 
 import lombok.*;
-import org.assessment.domain.PointSummaryDto;
+import org.assessment.domain.reward.PointSummaryDto;
 
 import java.util.List;
 

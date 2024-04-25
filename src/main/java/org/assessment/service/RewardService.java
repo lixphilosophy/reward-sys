@@ -1,6 +1,6 @@
 package org.assessment.service;
 
-import org.assessment.domain.PointSummaryDto;
+import org.assessment.domain.reward.PointSummaryDto;
 
 import java.util.List;
 

@@ -4,7 +4,7 @@ import org.assessment.constant.StatusCode;
 import org.assessment.constant.StatusMsg;
 import org.assessment.domain.request.AddTransactionRequest;
 import org.assessment.domain.request.BatchAddTransactionRequest;
-import org.assessment.exception.transaction.InvalidRequestException;
+import org.assessment.exception.transaction.TransactionRequestException;
 import org.assessment.service.TransactionService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -85,7 +85,7 @@ public class TransactionControllerTest {
     @Test
     void requestCheckHelper_NullCustomerId_ShouldThrowException() {
         validRequest.setCustomerId(null);
-        Exception exception = assertThrows(InvalidRequestException.class,
+        Exception exception = assertThrows(TransactionRequestException.class,
                 () -> transactionController.requestCheckHelper(validRequest));
         assertEquals("customerId is required", exception.getMessage());
     }
@@ -93,7 +93,7 @@ public class TransactionControllerTest {
     @Test
     void requestCheckHelper_NullAmount_ShouldThrowException() {
         validRequest.setAmount(null);
-        Exception exception = assertThrows(InvalidRequestException.class,
+        Exception exception = assertThrows(TransactionRequestException.class,
                 () -> transactionController.requestCheckHelper(validRequest));
         assertEquals("please provide amount customer spent", exception.getMessage());
     }
@@ -101,7 +101,7 @@ public class TransactionControllerTest {
     @Test
     void requestCheckHelper_NullTransactionTime_ShouldThrowException() {
         validRequest.setTransactionTime(null);
-        Exception exception = assertThrows(InvalidRequestException.class,
+        Exception exception = assertThrows(TransactionRequestException.class,
                 () -> transactionController.requestCheckHelper(validRequest));
         assertEquals("please provide transaction time", exception.getMessage());
     }

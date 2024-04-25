@@ -9,7 +9,7 @@ import org.assessment.domain.request.BatchAddTransactionRequest;
 import org.assessment.domain.response.AddTransactionResponse;
 import org.assessment.domain.response.BatchAddTransactionResponse;
 import org.assessment.domain.response.ResponseDTO;
-import org.assessment.exception.transaction.InvalidRequestException;
+import org.assessment.exception.transaction.TransactionRequestException;
 import org.assessment.service.TransactionService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -71,15 +71,15 @@ public class TransactionController {
 
     protected void requestCheckHelper(AddTransactionRequest request) {
         if (Objects.isNull(request.getCustomerId())) {
-            throw new InvalidRequestException("customerId is required");
+            throw new TransactionRequestException("customerId is required");
         }
 
         if (Objects.isNull(request.getAmount())) {
-            throw new InvalidRequestException("please provide amount customer spent");
+            throw new TransactionRequestException("please provide amount customer spent");
         }
 
         if (Objects.isNull(request.getTransactionTime())) {
-            throw new InvalidRequestException("please provide transaction time");
+            throw new TransactionRequestException("please provide transaction time");
         }
     }
 }

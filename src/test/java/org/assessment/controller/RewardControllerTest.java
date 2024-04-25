@@ -2,14 +2,13 @@ package org.assessment.controller;
 
 import org.assessment.constant.StatusCode;
 import org.assessment.constant.StatusMsg;
-import org.assessment.domain.PointSummaryDto;
+import org.assessment.domain.reward.PointSummaryDto;
 import org.assessment.service.RewardService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-import java.util.Arrays;
 import java.util.List;
 
 import static org.mockito.Mockito.*;
