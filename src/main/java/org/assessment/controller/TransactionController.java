@@ -33,6 +33,10 @@ public class TransactionController {
             @RequestBody BatchAddTransactionRequest request) {
         log.info("Batch add transaction: {}", request);
 
+        if(Objects.isNull(request.getTransactions()) || request.getTransactions().isEmpty()) {
+            throw new TransactionRequestException("transactions is required");
+        }
+
         for (AddTransactionRequest transaction : request.getTransactions()) {
             requestCheckHelper(transaction);
         }
