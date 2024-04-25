@@ -15,11 +15,11 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
 
       - name: Set up JDK 17
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           distribution: 'adopt'
           java-version: '17'
@@ -41,7 +41,7 @@ jobs:
           echo "branches = ${{ steps.jacoco.outputs.branches }}"
 
       - name: Upload JaCoCo coverage report as a workflow artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: jacoco-report
           path: target/site/jacoco/
