@@ -8,87 +8,546 @@
 	},
 	"item": [
 		{
-			"name": "add transaction",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"customerId\": \"fa710852-d7c5-465f-81c2-1473b6a3bd9e\",\n    \"amount\": 200,\n    \"transactionTime\": \"2024-04-23T00:00:00.000Z\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "dev",
+			"item": [
+				{
+					"name": "add transaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\": \"fa710852-d7c5-465f-81c2-1473b6a3bd9e\",\n    \"amount\": 200,\n    \"transactionTime\": \"2024-04-23T00:00:00.000Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/transaction/api/v1/add",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"transaction",
+								"api",
+								"v1",
+								"add"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "localhost:8080/transaction/api/v1/add",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"transaction",
-						"api",
-						"v1",
-						"add"
-					]
+				{
+					"name": "add customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerFirstName\": \"Kellan\",\n    \"customerLastName\": \"Lucas\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/customer/api/v1/add",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customer",
+								"api",
+								"v1",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "batch add transaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"transactions\": [\n        {\n            \"customerId\": \"fa710852-d7c5-465f-81c2-1473b6a3bd9e\",\n            \"amount\": 200,\n            \"transactionTime\": \"2024-04-23T00:00:00.000Z\"\n        },\n        {\n            \"customerId\": \"fa710852-d7c5-465f-81c2-1473b6a3bd9e\",\n            \"amount\": 300,\n            \"transactionTime\": \"2024-04-23T00:00:00.000Z\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/transaction/api/v1/batch/add",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"transaction",
+								"api",
+								"v1",
+								"batch",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all point summaries",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/reward/api/v1/pointSummary/getAll",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reward",
+								"api",
+								"v1",
+								"pointSummary",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all customer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/customer/api/v1/getAll",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customer",
+								"api",
+								"v1",
+								"getAll"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "batch add transaction",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"transactions\": [\n        {\n            \"customerId\": \"fa710852-d7c5-465f-81c2-1473b6a3bd9e\",\n            \"amount\": 200,\n            \"transactionTime\": \"2024-04-23T00:00:00.000Z\"\n        },\n        {\n            \"customerId\": \"fa710852-d7c5-465f-81c2-1473b6a3bd9e\",\n            \"amount\": 300,\n            \"transactionTime\": \"2024-04-23T00:00:00.000Z\"\n        }\n    ]\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "qa",
+			"item": [
+				{
+					"name": "add customer qa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerFirstName\": \"Kellan\",\n    \"customerLastName\": \"Lucas\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://3.144.181.130:8080/customer/api/v1/add",
+							"protocol": "http",
+							"host": [
+								"3",
+								"144",
+								"181",
+								"130"
+							],
+							"port": "8080",
+							"path": [
+								"customer",
+								"api",
+								"v1",
+								"add"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "localhost:8080/transaction/api/v1/batch/add",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"transaction",
-						"api",
-						"v1",
-						"batch",
-						"add"
-					]
+				{
+					"name": "add transaction qa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\": \"fa710852-d7c5-465f-81c2-1473b6a3bd9e\",\n    \"amount\": 200,\n    \"transactionTime\": \"2024-04-23T00:00:00.000Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://3.144.181.130:8080/transaction/api/v1/add",
+							"protocol": "http",
+							"host": [
+								"3",
+								"144",
+								"181",
+								"130"
+							],
+							"port": "8080",
+							"path": [
+								"transaction",
+								"api",
+								"v1",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "batch add transaction qa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"transactions\": [\n        {\n            \"customerId\": \"fa710852-d7c5-465f-81c2-1473b6a3bd9e\",\n            \"amount\": 200,\n            \"transactionTime\": \"2024-04-23T00:00:00.000Z\"\n        },\n        {\n            \"customerId\": \"fa710852-d7c5-465f-81c2-1473b6a3bd9e\",\n            \"amount\": 300,\n            \"transactionTime\": \"2024-04-23T00:00:00.000Z\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://3.144.181.130:8080/transaction/api/v1/batch/add",
+							"protocol": "http",
+							"host": [
+								"3",
+								"144",
+								"181",
+								"130"
+							],
+							"port": "8080",
+							"path": [
+								"transaction",
+								"api",
+								"v1",
+								"batch",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all point summaries qa",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://3.144.181.130:8080/reward/api/v1/pointSummary/getAll",
+							"protocol": "http",
+							"host": [
+								"3",
+								"144",
+								"181",
+								"130"
+							],
+							"port": "8080",
+							"path": [
+								"reward",
+								"api",
+								"v1",
+								"pointSummary",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all customer qa",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://3.144.181.130:8080/customer/api/v1/getAll",
+							"protocol": "http",
+							"host": [
+								"3",
+								"144",
+								"181",
+								"130"
+							],
+							"port": "8080",
+							"path": [
+								"customer",
+								"api",
+								"v1",
+								"getAll"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "get all point summaries",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:8080/reward/api/v1/pointSummary/getAll",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"reward",
-						"api",
-						"v1",
-						"pointSummary",
-						"getAll"
-					]
+			"name": "error handle check",
+			"item": [
+				{
+					"name": "add customer without fn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerLastName\": \"Lucas\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://3.144.181.130:8080/customer/api/v1/add",
+							"protocol": "http",
+							"host": [
+								"3",
+								"144",
+								"181",
+								"130"
+							],
+							"port": "8080",
+							"path": [
+								"customer",
+								"api",
+								"v1",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add transaction without customerId",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\": 200,\n    \"transactionTime\": \"2024-04-23T00:00:00.000Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://3.144.181.130:8080/transaction/api/v1/add",
+							"protocol": "http",
+							"host": [
+								"3",
+								"144",
+								"181",
+								"130"
+							],
+							"port": "8080",
+							"path": [
+								"transaction",
+								"api",
+								"v1",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add transaction with invalid customerId",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\": \"aa\",\n    \"amount\": 200,\n    \"transactionTime\": \"2024-04-23T00:00:00.000Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://3.144.181.130:8080/transaction/api/v1/add",
+							"protocol": "http",
+							"host": [
+								"3",
+								"144",
+								"181",
+								"130"
+							],
+							"port": "8080",
+							"path": [
+								"transaction",
+								"api",
+								"v1",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add transaction without amount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\": \"fa710852-d7c5-465f-81c2-1473b6a3bd9e\",\n    \"transactionTime\": \"2024-04-23T00:00:00.000Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://3.144.181.130:8080/transaction/api/v1/add",
+							"protocol": "http",
+							"host": [
+								"3",
+								"144",
+								"181",
+								"130"
+							],
+							"port": "8080",
+							"path": [
+								"transaction",
+								"api",
+								"v1",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add transaction without transactionTime",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\": \"fa710852-d7c5-465f-81c2-1473b6a3bd9e\",\n    \"amount\": 200\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://3.144.181.130:8080/transaction/api/v1/add",
+							"protocol": "http",
+							"host": [
+								"3",
+								"144",
+								"181",
+								"130"
+							],
+							"port": "8080",
+							"path": [
+								"transaction",
+								"api",
+								"v1",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add transaction with invalid transactionTime",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\": \"fa710852-d7c5-465f-81c2-1473b6a3bd9e\",\n    \"amount\": 200,\n    \"transactionTime\": \"2024-04-23\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://3.144.181.130:8080/transaction/api/v1/add",
+							"protocol": "http",
+							"host": [
+								"3",
+								"144",
+								"181",
+								"130"
+							],
+							"port": "8080",
+							"path": [
+								"transaction",
+								"api",
+								"v1",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "batch add transaction with any invalid data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"transactions\": [\n        {\n            \"customerId\": \"fa710852-d7c5-465f-81c2-1473b6a3bd9e\",\n            \"transactionTime\": \"2024-04-23T00:00:00.000Z\"\n        },\n        {\n            \"customerId\": \"fa710852-d7c5-465f-81c2-1473b6a3bd9e\",\n            \"amount\": 300,\n            \"transactionTime\": \"2024-04-23T00:00:00.000Z\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://3.144.181.130:8080/transaction/api/v1/batch/add",
+							"protocol": "http",
+							"host": [
+								"3",
+								"144",
+								"181",
+								"130"
+							],
+							"port": "8080",
+							"path": [
+								"transaction",
+								"api",
+								"v1",
+								"batch",
+								"add"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		}
 	]
 }
