@@ -39,7 +39,7 @@ public class RewardControllerTest {
     void testGetAllPointSummariesWithNoTransactions() {
         when(transactionRepository.findAll()).thenReturn(List.of());
 
-        List<PointSummaryDto> result = rewardService.getAllPointSummaries();
+        List<PointSummaryDto> result = rewardService.getAllPointSummaries(null);
 
         assertTrue(result.isEmpty());
     }
@@ -48,7 +48,7 @@ public class RewardControllerTest {
     void testGetAllPointSummariesWithMultipleTransactions() {
         when(transactionRepository.findAll()).thenReturn(Arrays.asList(transaction1, transaction2));
 
-        List<PointSummaryDto> result = rewardService.getAllPointSummaries();
+        List<PointSummaryDto> result = rewardService.getAllPointSummaries(null);
 
         assertFalse(result.isEmpty());
         assertEquals(2, result.size());
@@ -63,5 +63,16 @@ public class RewardControllerTest {
 
         // Ensure proper points calculation is applied
         assertEquals(90, firstCustomerSummary.getPointsPerMonth().get("2024-04"));
+    }
+
+    @Test
+    void testGetAllPointSummariesWithSearchContent() {
+        when(transactionRepository.findByCustomerFirstNameContainingOrCustomerLastNameContaining("John", "John")).thenReturn(List.of(transaction1));
+
+        List<PointSummaryDto> result = rewardService.getAllPointSummaries("John");
+
+        assertFalse(result.isEmpty());
+        assertEquals(1, result.size());
+        assertEquals(90, result.get(0).getTotalPoints());
     }
 }
