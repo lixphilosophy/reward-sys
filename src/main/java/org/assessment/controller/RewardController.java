@@ -11,6 +11,7 @@ import org.assessment.service.RewardService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -24,10 +25,11 @@ public class RewardController {
     private final RewardService rewardService;
 
     @GetMapping("/pointSummary/getAll")
-    public ResponseEntity<ResponseDTO<GetAllPointSummaryResponse, Object>> getAllCustomersPointSummaries() {
+    public ResponseEntity<ResponseDTO<GetAllPointSummaryResponse, Object>> getAllCustomersPointSummaries(
+            @RequestParam(value = "searchContent", required = false) String searchContent) {
         log.info("Getting point summary for all user");
 
-        List<PointSummaryDto> pointSummaries = rewardService.getAllPointSummaries();
+        List<PointSummaryDto> pointSummaries = rewardService.getAllPointSummaries(searchContent);
 
         return ResponseEntity.ok().body(ResponseDTO.<GetAllPointSummaryResponse, Object>builder()
                 .code(StatusCode.OK)

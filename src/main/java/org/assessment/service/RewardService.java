@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface RewardService {
 
-    List<PointSummaryDto> getAllPointSummaries();
+    List<PointSummaryDto> getAllPointSummaries(String searchContent);
 }

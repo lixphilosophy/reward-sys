@@ -33,7 +33,7 @@ public class RewardControllerTest {
         PointSummaryDto pointSummaryDto = new PointSummaryDto("C001", "John", "Doe", null, 150);
         List<PointSummaryDto> pointSummaries = List.of(pointSummaryDto);
 
-        when(rewardService.getAllPointSummaries()).thenReturn(pointSummaries);
+        when(rewardService.getAllPointSummaries(null)).thenReturn(pointSummaries);
 
         mockMvc.perform(get("/reward/api/v1/pointSummary/getAll"))
                 .andExpect(status().isOk())
@@ -43,6 +43,6 @@ public class RewardControllerTest {
                 .andExpect(jsonPath("$.data.ent.pointSummaries[0].customerId").value("C001"))
                 .andExpect(jsonPath("$.data.ent.pointSummaries[0].totalPoints").value(150));
 
-        verify(rewardService).getAllPointSummaries();
+        verify(rewardService).getAllPointSummaries(null);
     }
 }

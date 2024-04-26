@@ -14,6 +14,7 @@ import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
@@ -25,8 +26,11 @@ public class RewardServiceImpl implements RewardService {
 
     @Override
     @Transactional
-    public List<PointSummaryDto> getAllPointSummaries() {
-        List<Transaction> transactions = (List<Transaction>) transactionRepository.findAll();
+    public List<PointSummaryDto> getAllPointSummaries(String searchContent) {
+
+        List<Transaction> transactions = Objects.isNull(searchContent) || searchContent.isEmpty() ?
+                (List<Transaction>) transactionRepository.findAll() :
+                transactionRepository.findByCustomerFirstNameContainingOrCustomerLastNameContaining(searchContent, searchContent);
         return getPointsSummaries(transactions);
     }
 
